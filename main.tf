@@ -15,7 +15,7 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "test_master" {
-  count = 0
+  count = 2
   name = "master-${count.index + 1}"
   target_node = var.proxmox_host
   clone = var.template_name
