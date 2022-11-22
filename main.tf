@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "telmate/proxmox"
-      version = "2.7.4"
+      version = "2.9.11"
     }
   }
 }
@@ -16,7 +16,7 @@ provider "proxmox" {
 
 resource "proxmox_vm_qemu" "test_master" {
   count = 1
-  
+
   name = "master-${count.index + 1}"
   target_node = var.proxmox_host
   clone = var.template_name
