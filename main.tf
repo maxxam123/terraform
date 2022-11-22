@@ -58,7 +58,7 @@ resource "proxmox_vm_qemu" "test_master" {
 }
 
 resource "proxmox_vm_qemu" "test_worker" {
-  count = 0
+  count = 1
   name = "worker-${count.index + 1}"
   target_node = var.proxmox_host
   clone = var.template_name
