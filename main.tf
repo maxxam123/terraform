@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "proxmox" {
-  pm_api_url = "https://:87.79.240.210:8006/api2/json"
+  pm_api_url = "https://panwang.de:8006/api2/json"
   pm_api_token_id = "blog_example@pam!new_token_id"
   pm_api_token_secret = "47e03114-d1c2-4ccb-aabc-e90267329bba"
   pm_tls_insecure = true
