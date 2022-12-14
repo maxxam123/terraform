@@ -49,3 +49,20 @@ jobs:
       run: terraform apply -auto-approve -input=false
     - name: get terraform state file
       run: ls -la
+    - name: copy
+      run: |
+        mkdir folder
+        cd folder
+        mkdir folder2
+        cd ..
+        cp terraform.tfstate folder/folder2/terraform.tfstate
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.GIT_STATE }}
+      with:
+        source-directory: 'folder'
+        destination-github-username: 'maxxam123'
+        destination-repository-name: 'state'
+        user-email: hennighausenmax@gmail.com
+        target-branch: main
